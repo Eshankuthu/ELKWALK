@@ -75,8 +75,16 @@ export default function HomePage() {
   return (
     <>
       {/* Hero Section */}
-      <section className="relative py-20 md:py-32 overflow-hidden bg-[#1059D2]">
-        <div className="container mx-auto px-4 sm:px-6 lg:px-8">
+      <section className="relative py-20 md:py-32 overflow-hidden">
+        {/* Background Image */}
+        <div 
+          className="absolute inset-0 bg-cover bg-center bg-no-repeat"
+          style={{ backgroundImage: "url('/elkwalk-bg.jpg')" }}
+        />
+        {/* Blue Overlay */}
+        <div className="absolute inset-0 bg-[#1059D2]/70" />
+        
+        <div className="relative z-10 container mx-auto px-4 sm:px-6 lg:px-8">
           <div className="max-w-4xl mx-auto text-center">
             <h1 className="text-4xl sm:text-5xl md:text-6xl lg:text-7xl font-bold text-white mb-6 leading-tight">
               We build AI systems that reduce cost, replace manual work, and generate revenue
