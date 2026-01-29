@@ -17,7 +17,7 @@ export const metadata: Metadata = {
     default: "ElkWalk - AI Automation & Custom AI Solutions",
     template: "%s | ElkWalk",
   },
-  description: "We build AI systems that reduce cost, replace manual work, and generate revenue. AI automation, voice agents, custom SaaS, healthcare QA, and more.",
+  description: "We build AI systems that reduce cost, replace manual work, and generate revenue. AI workflow automation, voice agents, custom SaaS, document intelligence, and more.",
   keywords: ["AI automation", "AI agents", "voice AI", "custom AI SaaS", "healthcare AI", "document intelligence", "AI strategy"],
   authors: [{ name: "ElkWalk" }],
   creator: "ElkWalk",
@@ -84,13 +84,14 @@ export default function RootLayout({
   return (
     <html lang="en">
       <head>
+        <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=5" />
         <script
           type="application/ld+json"
           dangerouslySetInnerHTML={{ __html: JSON.stringify(organizationSchema) }}
         />
       </head>
       <body
-        className={`${geistSans.variable} ${geistMono.variable} antialiased bg-gray-50`}
+        className={`${geistSans.variable} ${geistMono.variable} antialiased bg-black text-white`}
       >
         {children}
       </body>

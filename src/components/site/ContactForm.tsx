@@ -1,7 +1,7 @@
 "use client";
 
 import { useState, FormEvent } from "react";
-import { Send } from "lucide-react";
+import { Send, CheckCircle2, AlertCircle } from "lucide-react";
 
 export function ContactForm() {
   const [status, setStatus] = useState<"idle" | "loading" | "success" | "error">("idle");
@@ -47,7 +47,7 @@ export function ContactForm() {
     <form onSubmit={handleSubmit} className="space-y-6">
       <div className="grid md:grid-cols-2 gap-6">
         <div>
-          <label htmlFor="name" className="block text-sm font-medium text-gray-700 mb-2">
+          <label htmlFor="name" className="block text-sm font-semibold text-white mb-2">
             Name *
           </label>
           <input
@@ -55,11 +55,11 @@ export function ContactForm() {
             id="name"
             name="name"
             required
-            className="w-full px-4 py-2 border border-gray-300 rounded-lg focus:ring-2 focus:ring-blue-500 focus:border-transparent"
+            className="w-full h-11 px-4 rounded-xl glass border-white/10 text-white placeholder:text-cyan-200/50 focus:border-cyan-400/50 focus:outline-none focus:ring-2 focus:ring-cyan-500/30"
           />
         </div>
         <div>
-          <label htmlFor="email" className="block text-sm font-medium text-gray-700 mb-2">
+          <label htmlFor="email" className="block text-sm font-semibold text-white mb-2">
             Email *
           </label>
           <input
@@ -67,42 +67,42 @@ export function ContactForm() {
             id="email"
             name="email"
             required
-            className="w-full px-4 py-2 border border-gray-300 rounded-lg focus:ring-2 focus:ring-blue-500 focus:border-transparent"
+            className="w-full h-11 px-4 rounded-xl glass border-white/10 text-white placeholder:text-cyan-200/50 focus:border-cyan-400/50 focus:outline-none focus:ring-2 focus:ring-cyan-500/30"
           />
         </div>
       </div>
       <div>
-        <label htmlFor="company" className="block text-sm font-medium text-gray-700 mb-2">
+        <label htmlFor="company" className="block text-sm font-semibold text-white mb-2">
           Company
         </label>
         <input
           type="text"
           id="company"
           name="company"
-          className="w-full px-4 py-2 border border-gray-300 rounded-lg focus:ring-2 focus:ring-blue-500 focus:border-transparent"
+          className="w-full h-11 px-4 rounded-xl glass border-white/10 text-white placeholder:text-cyan-200/50 focus:border-cyan-400/50 focus:outline-none focus:ring-2 focus:ring-cyan-500/30"
         />
       </div>
       <div>
-        <label htmlFor="serviceInterest" className="block text-sm font-medium text-gray-700 mb-2">
+        <label htmlFor="serviceInterest" className="block text-sm font-semibold text-white mb-2">
           Service Interest
         </label>
         <select
           id="serviceInterest"
           name="serviceInterest"
-          className="w-full px-4 py-2 border border-gray-300 rounded-lg focus:ring-2 focus:ring-blue-500 focus:border-transparent"
+          className="w-full h-11 px-4 rounded-xl glass border-white/10 text-white focus:border-cyan-400/50 focus:outline-none focus:ring-2 focus:ring-cyan-500/30"
         >
           <option value="">Select a service...</option>
-          <option value="ai-automation">AI Automation & Agent Development</option>
-          <option value="ai-voice">AI Voice Agents</option>
-          <option value="custom-saas">Custom AI SaaS Development</option>
-          <option value="healthcare-qa">AI for Healthcare & Enterprise QA</option>
-          <option value="doc-intelligence">AI Data & Document Intelligence</option>
-          <option value="marketing-seo">AI Marketing & SEO Automation</option>
-          <option value="strategy-advisory">AI Strategy & Advisory</option>
+          <option value="ai-workflow-automation">AI Workflow Automation</option>
+          <option value="ai-voice-agents">AI Voice Agents</option>
+          <option value="custom-ai-saas-development">Custom AI SaaS Development</option>
+          <option value="ai-healthcare-enterprise-qa">AI for Healthcare & Enterprise QA</option>
+          <option value="ai-data-document-intelligence">AI Data & Document Intelligence</option>
+          <option value="ai-marketing-seo-automation">AI Marketing & SEO Automation</option>
+          <option value="ai-strategy-advisory">AI Strategy & Advisory</option>
         </select>
       </div>
       <div>
-        <label htmlFor="message" className="block text-sm font-medium text-gray-700 mb-2">
+        <label htmlFor="message" className="block text-sm font-semibold text-white mb-2">
           Message *
         </label>
         <textarea
@@ -110,23 +110,25 @@ export function ContactForm() {
           name="message"
           rows={5}
           required
-          className="w-full px-4 py-2 border border-gray-300 rounded-lg focus:ring-2 focus:ring-blue-500 focus:border-transparent"
+          className="w-full px-4 py-3 rounded-xl glass border-white/10 text-white placeholder:text-cyan-200/50 focus:border-cyan-400/50 focus:outline-none focus:ring-2 focus:ring-cyan-500/30"
         />
       </div>
       {status === "error" && (
-        <div className="p-4 bg-red-50 border border-red-200 rounded-lg text-red-700">
-          {errorMessage}
+        <div className="flex items-center gap-3 p-4 glass border-red-400/30 rounded-xl text-red-300">
+          <AlertCircle className="h-5 w-5 flex-shrink-0" />
+          <span>{errorMessage}</span>
         </div>
       )}
       {status === "success" && (
-        <div className="p-4 bg-green-50 border border-green-200 rounded-lg text-green-700">
-          Thank you! We'll be in touch soon.
+        <div className="flex items-center gap-3 p-4 glass border-green-400/30 rounded-xl text-green-300">
+          <CheckCircle2 className="h-5 w-5 flex-shrink-0" />
+          <span>Thank you! We'll be in touch soon.</span>
         </div>
       )}
       <button
         type="submit"
         disabled={status === "loading"}
-        className="w-full md:w-auto px-8 py-3 bg-gradient-to-r from-blue-600 to-purple-600 text-white font-semibold rounded-lg hover:from-blue-700 hover:to-purple-700 disabled:opacity-50 disabled:cursor-not-allowed transition-all flex items-center justify-center gap-2"
+        className="w-full md:w-auto min-h-[48px] px-8 py-3.5 glass-strong text-white font-semibold rounded-xl hover:bg-cyan-500/20 hover:border-cyan-400/40 active:opacity-90 disabled:opacity-50 disabled:cursor-not-allowed transition-all flex items-center justify-center gap-2 border-glow-cyan"
       >
         {status === "loading" ? (
           "Sending..."

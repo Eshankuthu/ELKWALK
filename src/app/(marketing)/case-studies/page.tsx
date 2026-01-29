@@ -1,8 +1,9 @@
 import { Metadata } from "next";
 import { SectionHeading } from "@/components/site/SectionHeading";
 import { Badge } from "@/components/site/Badge";
-import { ArrowRight } from "lucide-react";
+import { ArrowRight, TrendingUp, CheckCircle2 } from "lucide-react";
 import Link from "next/link";
+import { ScrollAnimation } from "@/components/site/ScrollAnimation";
 
 export const metadata: Metadata = {
   title: "Case Studies",
@@ -24,6 +25,7 @@ const caseStudies = [
       "Zero missed appointments due to after-hours calls",
     ],
     metrics: "70% time reduction, $15k annual savings",
+    icon: "🏥",
   },
   {
     title: "Immigration Law Firm Document Processing",
@@ -39,6 +41,7 @@ const caseStudies = [
       "Improved client satisfaction",
     ],
     metrics: "90% accuracy, 10x speed increase",
+    icon: "⚖️",
   },
   {
     title: "SaaS Customer Support Automation",
@@ -54,6 +57,7 @@ const caseStudies = [
       "Scalable support without hiring",
     ],
     metrics: "60% auto-resolution, instant responses",
+    icon: "🚀",
   },
   {
     title: "Real Estate Agency Lead Qualification",
@@ -69,6 +73,7 @@ const caseStudies = [
       "Better lead tracking and follow-up",
     ],
     metrics: "100% call answer rate, 40% more qualified leads",
+    icon: "🏠",
   },
   {
     title: "E-commerce Marketing Automation",
@@ -84,79 +89,111 @@ const caseStudies = [
       "Reduced marketing overhead by 50%",
     ],
     metrics: "10x content production, 50% cost reduction",
+    icon: "🛒",
   },
 ];
 
 export default function CaseStudiesPage() {
   return (
-    <div className="py-20">
-      <div className="container mx-auto px-4">
-        <SectionHeading
-          title="Case Studies"
-          subtitle="Real results from real clients. See how ElkWalk transforms businesses with AI."
-          className="text-center mb-16"
-        />
-
-        <div className="space-y-12 max-w-5xl mx-auto">
-          {caseStudies.map((study, index) => (
-            <article
-              key={index}
-              className="bg-white rounded-lg border border-gray-200 p-8 hover:shadow-lg transition-shadow"
-            >
-              <div className="flex items-start justify-between mb-4">
-                <Badge variant="outline">{study.industry}</Badge>
-                <div className="text-sm font-semibold text-blue-600">{study.metrics}</div>
-              </div>
-              <h2 className="text-3xl font-bold text-gray-900 mb-6">{study.title}</h2>
-
-              <div className="space-y-6">
-                <div>
-                  <h3 className="text-lg font-semibold text-gray-900 mb-2">Challenge</h3>
-                  <p className="text-gray-700">{study.challenge}</p>
-                </div>
-
-                <div>
-                  <h3 className="text-lg font-semibold text-gray-900 mb-2">Solution</h3>
-                  <p className="text-gray-700">{study.solution}</p>
-                </div>
-
-                <div>
-                  <h3 className="text-lg font-semibold text-gray-900 mb-2">Technology Used</h3>
-                  <div className="flex flex-wrap gap-2">
-                    {study.techUsed.map((tech, tIndex) => (
-                      <Badge key={tIndex} variant="secondary">
-                        {tech}
-                      </Badge>
-                    ))}
-                  </div>
-                </div>
-
-                <div>
-                  <h3 className="text-lg font-semibold text-gray-900 mb-2">Results</h3>
-                  <ul className="space-y-2">
-                    {study.results.map((result, rIndex) => (
-                      <li key={rIndex} className="flex items-start">
-                        <span className="text-green-500 mr-2">✓</span>
-                        <span className="text-gray-700">{result}</span>
-                      </li>
-                    ))}
-                  </ul>
-                </div>
-              </div>
-            </article>
-          ))}
+    <>
+      {/* Hero Section */}
+      <section className="relative py-20 md:py-32 overflow-hidden bg-[#1059D2]">
+        <div className="container mx-auto px-4 sm:px-6 lg:px-8">
+          <div className="max-w-4xl mx-auto text-center">
+            <h1 className="text-4xl sm:text-5xl md:text-6xl lg:text-7xl font-bold text-white mb-6 leading-tight">
+              Case Studies
+            </h1>
+            <p className="text-lg sm:text-xl md:text-2xl text-white/90 leading-relaxed">
+              Real results from real clients
+            </p>
+          </div>
         </div>
+      </section>
 
-        <div className="text-center mt-16">
-          <Link
-            href="/contact"
-            className="inline-flex items-center px-8 py-4 bg-gradient-to-r from-blue-600 to-purple-600 text-white font-semibold rounded-lg hover:from-blue-700 hover:to-purple-700 transition-all"
-          >
-            Start Your Success Story
-            <ArrowRight className="ml-2 h-5 w-5" />
-          </Link>
+      <div className="py-20 bg-black">
+        <div className="container mx-auto px-4 sm:px-6 lg:px-8">
+          <div className="space-y-12 max-w-6xl mx-auto">
+            {caseStudies.map((study, index) => (
+              <ScrollAnimation key={index} delay={index * 100} direction="up">
+                <article className="bg-[#1A1A1A] rounded-xl border border-white/10 p-8 md:p-12 hover:border-white/20 transition-all">
+                  <div className="flex items-start justify-between mb-6">
+                    <div className="flex items-center gap-4">
+                      <div className="text-4xl">{study.icon}</div>
+                      <div>
+                        <Badge variant="outline" className="mb-2 border-[#2196F3]/30 text-[#2196F3]">
+                          {study.industry}
+                        </Badge>
+                        <div className="flex items-center gap-2 text-sm font-semibold text-[#2196F3]">
+                          <TrendingUp className="h-4 w-4" />
+                          {study.metrics}
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                  <h2 className="text-3xl md:text-4xl font-bold text-white mb-6">{study.title}</h2>
+
+                  <div className="space-y-6">
+                    <div>
+                      <h3 className="text-lg font-semibold text-white mb-2 flex items-center gap-2">
+                        <span className="w-1 h-6 bg-[#2196F3] rounded-full"></span>
+                        Challenge
+                      </h3>
+                      <p className="text-white/80 leading-relaxed">{study.challenge}</p>
+                    </div>
+
+                    <div>
+                      <h3 className="text-lg font-semibold text-white mb-2 flex items-center gap-2">
+                        <span className="w-1 h-6 bg-[#2196F3] rounded-full"></span>
+                        Solution
+                      </h3>
+                      <p className="text-white/80 leading-relaxed">{study.solution}</p>
+                    </div>
+
+                    <div>
+                      <h3 className="text-lg font-semibold text-white mb-4 flex items-center gap-2">
+                        <span className="w-1 h-6 bg-[#2196F3] rounded-full"></span>
+                        Technology Used
+                      </h3>
+                      <div className="flex flex-wrap gap-3">
+                        {study.techUsed.map((tech, tIndex) => (
+                          <Badge key={tIndex} variant="secondary" className="text-sm px-4 py-2 bg-[#1A1A1A] border border-white/10 text-white/90">
+                            {tech}
+                          </Badge>
+                        ))}
+                      </div>
+                    </div>
+
+                    <div>
+                      <h3 className="text-lg font-semibold text-white mb-4 flex items-center gap-2">
+                        <span className="w-1 h-6 bg-[#2196F3] rounded-full"></span>
+                        Results
+                      </h3>
+                      <ul className="space-y-3">
+                        {study.results.map((result, rIndex) => (
+                          <li key={rIndex} className="flex items-start">
+                            <CheckCircle2 className="h-5 w-5 text-green-400 mr-3 flex-shrink-0 mt-0.5" />
+                            <span className="text-white/80 leading-relaxed">{result}</span>
+                          </li>
+                        ))}
+                      </ul>
+                    </div>
+                  </div>
+                </article>
+              </ScrollAnimation>
+            ))}
+          </div>
+
+          <div className="text-center mt-16">
+            <Link
+              href="/contact"
+              className="group inline-flex items-center px-8 py-4 bg-[#1A1A1A] border border-white text-white font-semibold rounded-full hover:bg-[#2A2A2A] transition-all"
+            >
+              Start Your Success Story
+              <ArrowRight className="ml-2 h-5 w-5 group-hover:translate-x-1 transition-transform" />
+            </Link>
+          </div>
         </div>
       </div>
-    </div>
+    </>
   );
 }

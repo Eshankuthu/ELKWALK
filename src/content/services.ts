@@ -3,6 +3,7 @@ export interface Service {
   title: string;
   shortDescription: string;
   longDescription: string;
+  category: string;
   outcomes: string[];
   techStack: string[];
   useCases: string[];
@@ -13,196 +14,284 @@ export interface Service {
     hourly?: string;
     engagement?: string;
   };
-  category: string;
 }
 
 export const services: Service[] = [
   {
-    slug: "ai-automation-agent-development",
-    title: "AI Automation & Agent Development",
-    shortDescription: "Build intelligent agents that automate complex workflows and reduce manual work.",
-    longDescription: "We develop custom AI agents that handle multi-step processes, decision-making, and integrations across your tech stack. From RPA replacement to intelligent document processing, our agents reduce operational costs while improving accuracy.",
+    slug: "ai-workflow-automation",
+    title: "AI Workflow Automation",
+    shortDescription: "AI agents that replace manual work and internal copilots for seamless automation.",
+    longDescription: "We build AI workflow automation systems that eliminate repetitive tasks, reduce operational costs, and free your team to focus on high-value work. Our solutions include n8n automation (Zapier replacement), AI agents powered by ChatGPT/Claude/OpenAI API, and integrations with Email, Slack, CRM, and Airtable.",
+    category: "Automation",
     outcomes: [
       "Reduce manual work by 60-80%",
-      "24/7 automated operations",
-      "Error reduction through intelligent validation",
-      "Scalable workflows that grow with your business",
-      "ROI typically achieved within 6-12 months"
+      "Cut operational costs by 40-60%",
+      "Improve process accuracy and consistency",
+      "Enable 24/7 automated workflows",
+      "Seamless integration with existing tools"
     ],
-    techStack: ["OpenAI GPT-4", "Claude", "LangChain", "Python", "Node.js", "Zapier/Make", "Custom APIs"],
+    techStack: [
+      "n8n",
+      "OpenAI API",
+      "ChatGPT",
+      "Claude",
+      "Zapier",
+      "Make",
+      "Airtable",
+      "Slack API",
+      "CRM Integrations"
+    ],
     useCases: [
-      "Customer support ticket routing and response",
-      "Invoice processing and accounting automation",
-      "Data entry and form filling",
-      "Email and document classification",
-      "Multi-system data synchronization"
+      "Email automation and routing",
+      "Slack notifications and workflows",
+      "CRM data entry and updates",
+      "Airtable record management",
+      "Document intake and processing",
+      "Internal copilots for team support"
     ],
-    idealClients: ["SMBs with repetitive workflows", "Growing companies scaling operations", "Teams drowning in manual tasks"],
+    idealClients: [
+      "SMBs looking to scale operations",
+      "Healthcare organizations",
+      "Law firms",
+      "SaaS startups",
+      "Teams with repetitive manual tasks"
+    ],
     pricingRange: {
-      setup: "$2,500–$10,000",
-      monthly: "$500–$2,000"
-    },
-    category: "Automation"
+      setup: "$2,500 – $10,000 per automation",
+      monthly: "$500 – $2,000 monthly support"
+    }
   },
   {
     slug: "ai-voice-agents",
     title: "AI Voice Agents",
-    shortDescription: "Conversational AI voice assistants that handle calls, bookings, and customer interactions.",
-    longDescription: "Deploy AI voice agents that sound natural, understand context, and handle complex conversations. Perfect for appointment scheduling, customer support, lead qualification, and after-hours coverage.",
+    shortDescription: "24/7 AI phone call agents for appointment booking, lead qualification, and customer support.",
+    longDescription: "Deploy intelligent voice agents that handle calls 24/7, book appointments, qualify leads, and provide customer support. Perfect for immigration intake calls, healthcare scheduling, real estate leads, and customer support scenarios.",
+    category: "Voice AI",
     outcomes: [
-      "24/7 call handling capability",
-      "Reduce call center costs by 40-60%",
-      "Instant response times",
-      "Consistent, professional interactions",
-      "Multi-language support"
+      "24/7 availability for customer calls",
+      "Reduce call handling costs by 70%",
+      "Improve lead qualification rates",
+      "Automated appointment booking",
+      "Consistent customer experience"
     ],
-    techStack: ["Twilio", "Deepgram", "ElevenLabs", "OpenAI Whisper", "Custom LLM Integration"],
+    techStack: [
+      "Retell",
+      "Twilio",
+      "OpenAI",
+      "Claude",
+      "n8n",
+      "Airtable",
+      "CRM Systems"
+    ],
     useCases: [
-      "Appointment booking and scheduling",
-      "Customer support first-line response",
-      "Lead qualification and routing",
-      "After-hours call handling",
-      "Order status and FAQ responses"
+      "Immigration intake calls",
+      "Healthcare appointment scheduling",
+      "Real estate lead qualification",
+      "Customer support automation",
+      "After-hours call handling"
     ],
-    idealClients: ["Healthcare practices", "Service businesses", "Real estate agencies", "Law firms"],
+    idealClients: [
+      "Healthcare practices",
+      "Immigration law firms",
+      "Real estate agencies",
+      "SaaS companies",
+      "Service businesses with high call volumes"
+    ],
     pricingRange: {
-      setup: "$3,000–$8,000",
-      monthly: "Usage-based + monthly maintenance"
-    },
-    category: "Voice"
+      setup: "$3,000 – $8,000 setup",
+      monthly: "Per-minute usage + monthly fee"
+    }
   },
   {
     slug: "custom-ai-saas-development",
     title: "Custom AI SaaS Development",
-    shortDescription: "Build AI-powered SaaS products from MVP to scale with modern architecture.",
-    longDescription: "We design and develop custom SaaS platforms with AI at the core. From MVP to production, we build scalable, secure applications that solve specific industry problems with intelligent automation.",
+    shortDescription: "Build AI-powered SaaS products from MVP to production with secure, scalable platforms.",
+    longDescription: "We specialize in building custom AI-powered SaaS products that generate revenue. From MVP to production, we create secure, scalable platforms including immigration eligibility evaluators, QA copilots, compliance dashboards, and prediction engines.",
+    category: "SaaS Development",
     outcomes: [
-      "MVP launch in 8-12 weeks",
-      "Scalable cloud architecture",
-      "AI features that differentiate your product",
-      "Modern tech stack for long-term maintenance",
-      "Revenue-generating platform"
+      "Launch AI-powered SaaS products",
+      "Generate new revenue streams",
+      "Secure and scalable architecture",
+      "MVP to production in 8-12 weeks",
+      "Modern tech stack with best practices"
     ],
-    techStack: ["Next.js", "TypeScript", "PostgreSQL", "Supabase/Vercel", "OpenAI API", "Stripe", "AWS/Vercel"],
+    techStack: [
+      "Next.js",
+      "Vercel",
+      "Supabase",
+      "Prisma",
+      "OpenAI API",
+      "Vector DBs",
+      "TypeScript",
+      "Tailwind CSS"
+    ],
     useCases: [
-      "Industry-specific AI tools",
-      "B2B automation platforms",
-      "AI-enhanced productivity apps",
-      "Custom CRM with AI insights",
-      "Niche market SaaS solutions"
+      "Immigration eligibility evaluators",
+      "QA copilots for teams",
+      "Compliance dashboards",
+      "Prediction engines",
+      "AI-powered business tools"
     ],
-    idealClients: ["SaaS startups", "Entrepreneurs with validated ideas", "Companies building internal tools"],
+    idealClients: [
+      "SaaS startups",
+      "Entrepreneurs with AI product ideas",
+      "Companies looking to build AI products",
+      "Teams needing custom AI solutions"
+    ],
     pricingRange: {
-      setup: "$15,000–$40,000",
-      monthly: "$5,000+"
-    },
-    category: "SaaS"
+      setup: "$15,000 – $40,000 MVP",
+      monthly: "$5,000+ ongoing development"
+    }
   },
   {
     slug: "ai-healthcare-enterprise-qa",
     title: "AI for Healthcare & Enterprise QA",
-    shortDescription: "AI-powered quality assurance and compliance for healthcare and regulated industries.",
-    longDescription: "Specialized AI solutions for healthcare documentation, compliance checking, and quality assurance. We build systems that ensure accuracy, reduce liability, and streamline regulatory workflows.",
+    shortDescription: "AI-assisted test strategy, data quality copilots, and automated validation engines.",
+    longDescription: "Our specialized AI solutions for healthcare and enterprise QA include AI-assisted test strategy, data quality copilots, and automated validation engines. We excel at AR aging anomaly detection, payroll validation bots, claims QA copilots, and rule-based + AI hybrid validation.",
+    category: "Healthcare QA",
     outcomes: [
-      "Reduce documentation errors by 70%+",
-      "Faster compliance reviews",
-      "Consistent quality standards",
-      "Reduced liability risk",
-      "Audit-ready documentation"
+      "Improve QA accuracy by 90%+",
+      "Reduce validation time by 75%",
+      "Detect anomalies automatically",
+      "Ensure compliance and data quality",
+      "Hybrid rule-based + AI validation"
     ],
-    techStack: ["HIPAA-compliant infrastructure", "Custom LLMs", "Document processing", "Compliance APIs"],
+    techStack: [
+      "OpenAI API",
+      "Custom validation engines",
+      "Rule-based systems",
+      "Data quality tools",
+      "Healthcare compliance frameworks"
+    ],
     useCases: [
-      "Medical record review and QA",
-      "Immigration document verification",
-      "Legal document compliance checks",
-      "Insurance claim validation",
-      "Regulatory reporting automation"
+      "AR aging anomaly detection",
+      "Payroll validation automation",
+      "Claims QA copilots",
+      "Healthcare data validation",
+      "Enterprise quality assurance"
     ],
-    idealClients: ["Healthcare organizations", "Immigration law firms", "Regulated industries", "Quality assurance teams"],
+    idealClients: [
+      "Healthcare organizations",
+      "Enterprise companies",
+      "Healthcare tech companies",
+      "Organizations with complex QA needs"
+    ],
     pricingRange: {
-      hourly: "$150–$250/hr",
-      setup: "Pilots $20k+"
-    },
-    category: "Healthcare QA"
+      hourly: "$150 – $250/hour consulting",
+      engagement: "$20k+ enterprise pilots"
+    }
   },
   {
     slug: "ai-data-document-intelligence",
     title: "AI Data & Document Intelligence",
-    shortDescription: "Extract, analyze, and structure data from documents with AI-powered intelligence.",
-    longDescription: "Transform unstructured documents into actionable data. Our systems extract key information, classify documents, and integrate insights into your workflows—handling everything from invoices to contracts.",
+    shortDescription: "Transform PDFs to structured data, extract evidence, and build knowledge bases with RAG.",
+    longDescription: "Convert unstructured documents into actionable data. Our AI document intelligence solutions extract information from PDFs, build knowledge bases using RAG (Retrieval-Augmented Generation), and process immigration petitions, healthcare contracts, insurance documents, and SOPs.",
+    category: "Document Intelligence",
     outcomes: [
-      "90%+ extraction accuracy",
-      "Process documents 10x faster",
-      "Structured data for analytics",
-      "Automated document routing",
-      "Searchable document archives"
+      "Extract structured data from documents",
+      "Build searchable knowledge bases",
+      "Reduce document processing time by 80%",
+      "Improve data accuracy",
+      "Enable intelligent document search"
     ],
-    techStack: ["OCR (Tesseract, AWS Textract)", "LLM extraction", "Vector databases", "Document parsing APIs"],
+    techStack: [
+      "OCR",
+      "LLM (OpenAI/Claude)",
+      "LangChain",
+      "LlamaIndex",
+      "Vector Search",
+      "PDF Processing"
+    ],
     useCases: [
-      "Invoice and receipt processing",
-      "Contract analysis and extraction",
-      "Form data extraction",
-      "Document classification and routing",
-      "Knowledge base creation"
+      "Immigration petition processing",
+      "Healthcare contract analysis",
+      "Insurance document extraction",
+      "SOP and policy knowledge bases",
+      "Document evidence extraction"
     ],
-    idealClients: ["Accounting firms", "Real estate agencies", "Legal practices", "Document-heavy operations"],
+    idealClients: [
+      "Law firms",
+      "Healthcare organizations",
+      "Insurance companies",
+      "Companies with document-heavy processes"
+    ],
     pricingRange: {
-      setup: "$5,000–$15,000",
-      monthly: "Per-doc or monthly subscription"
-    },
-    category: "Doc Intelligence"
+      setup: "$5,000 – $15,000 setup",
+      monthly: "Per-document or monthly pricing"
+    }
   },
   {
     slug: "ai-marketing-seo-automation",
     title: "AI Marketing & SEO Automation",
-    shortDescription: "Automate content creation, SEO optimization, and marketing workflows with AI.",
-    longDescription: "Scale your marketing efforts with AI-powered content generation, SEO optimization, social media automation, and lead nurturing. We build systems that create, optimize, and distribute content at scale.",
+    shortDescription: "AI content pipelines, SEO copilots, and answer-engine optimization (AEO) for better rankings.",
+    longDescription: "Automate your marketing and SEO with AI-powered content pipelines, SEO copilots, and answer-engine optimization. We build blog generation systems, schema automation, AI FAQ engines, and ChatGPT-ranking optimization tools.",
+    category: "Marketing Automation",
     outcomes: [
-      "10x content production capacity",
-      "Improved SEO rankings",
-      "Automated social media posting",
-      "Personalized email campaigns",
-      "Reduced marketing overhead"
+      "Increase organic traffic by 50-200%",
+      "Automate content creation",
+      "Improve search rankings",
+      "Optimize for answer engines",
+      "Scale content production"
     ],
-    techStack: ["OpenAI GPT-4", "Content APIs", "SEO tools", "Social media APIs", "Email automation"],
+    techStack: [
+      "OpenAI API",
+      "Content management systems",
+      "SEO tools",
+      "Schema markup",
+      "Content automation"
+    ],
     useCases: [
-      "Blog post and article generation",
-      "SEO-optimized content creation",
-      "Social media content scheduling",
-      "Email campaign personalization",
-      "Landing page A/B testing"
+      "Blog generation and publishing",
+      "Schema automation",
+      "AI FAQ engines",
+      "ChatGPT ranking optimization",
+      "Content pipeline automation"
     ],
-    idealClients: ["Marketing agencies", "Content teams", "SaaS companies", "E-commerce businesses"],
+    idealClients: [
+      "SaaS startups",
+      "Marketing agencies",
+      "Content teams",
+      "Companies focused on SEO growth"
+    ],
     pricingRange: {
-      monthly: "$1,500–$4,000/month"
-    },
-    category: "Marketing SEO"
+      monthly: "$1,500 – $4,000/month"
+    }
   },
   {
     slug: "ai-strategy-advisory",
     title: "AI Strategy & Advisory",
-    shortDescription: "Strategic guidance on AI adoption, ROI analysis, and implementation roadmaps.",
-    longDescription: "Get expert advice on how AI can transform your business. We assess opportunities, build implementation roadmaps, analyze ROI, and guide you through AI adoption with confidence.",
+    shortDescription: "High-margin AI roadmap, tool selection, and governance consulting.",
+    longDescription: "Get expert guidance on your AI strategy. We provide AI roadmaps, tool selection, governance & compliance (including Texas AI laws), use-case matrices, risk & ROI assessments, and architecture blueprints to set you up for success.",
+    category: "Strategy",
     outcomes: [
-      "Clear AI adoption roadmap",
-      "ROI projections and analysis",
-      "Risk assessment and mitigation",
-      "Vendor and technology selection",
-      "Implementation planning"
+      "Clear AI roadmap and strategy",
+      "Informed tool selection",
+      "Compliance and governance framework",
+      "Risk and ROI assessment",
+      "Architecture blueprint"
     ],
-    techStack: ["Strategic frameworks", "ROI modeling", "Technology assessment"],
+    techStack: [
+      "Strategic frameworks",
+      "Compliance tools",
+      "ROI modeling",
+      "Architecture design"
+    ],
     useCases: [
-      "AI readiness assessment",
-      "Use case identification",
-      "Technology stack recommendations",
-      "Implementation planning",
-      "Team training and enablement"
+      "AI use-case identification",
+      "Tool selection and evaluation",
+      "Governance and compliance planning",
+      "Risk assessment",
+      "Architecture design"
     ],
-    idealClients: ["Executives exploring AI", "Companies planning AI initiatives", "Teams needing strategic guidance"],
+    idealClients: [
+      "Enterprise companies",
+      "Companies starting AI initiatives",
+      "Organizations needing AI strategy",
+      "Teams requiring compliance guidance"
+    ],
     pricingRange: {
-      engagement: "$3,000–$7,500/engagement"
-    },
-    category: "Advisory"
+      engagement: "$3,000 – $7,500 per engagement"
+    }
   }
 ];
 

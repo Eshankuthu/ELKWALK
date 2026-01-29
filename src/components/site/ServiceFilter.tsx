@@ -26,15 +26,15 @@ export function ServiceFilter() {
   return (
     <>
       {/* Filter Tabs */}
-      <div className="flex flex-wrap justify-center gap-2 mb-12">
+      <div className="flex flex-wrap justify-center gap-2 mb-8 md:mb-12 px-2">
         {categories.map((category) => (
           <button
             key={category}
             onClick={() => setSelectedCategory(category)}
-            className={`px-6 py-2 rounded-lg font-medium transition-colors ${
+            className={`px-4 py-2.5 min-h-[44px] rounded-lg font-medium text-xs sm:text-sm transition-all active:scale-95 ${
               selectedCategory === category
-                ? "bg-gradient-to-r from-blue-600 to-purple-600 text-white"
-                : "bg-white border border-gray-300 text-gray-700 hover:border-blue-500"
+                ? "bg-gradient-to-r from-blue-600 to-purple-600 text-white shadow-md"
+                : "bg-white border border-gray-200 text-gray-700 active:border-blue-500 active:text-blue-600 dark:border-gray-800 dark:bg-white/[0.03] dark:text-gray-300 dark:active:border-blue-500"
             }`}
           >
             {category}
