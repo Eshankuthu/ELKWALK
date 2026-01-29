@@ -1,6 +1,7 @@
 "use client";
 
 import Link from "next/link";
+import Image from "next/image";
 import { useState } from "react";
 import { Menu, X } from "lucide-react";
 
@@ -21,11 +22,15 @@ export function Navbar() {
       <div className="container mx-auto px-4 sm:px-6 lg:px-8">
         <div className="flex items-center justify-between h-16">
           {/* Logo - Left */}
-          <Link href="/" className="flex items-center gap-2">
-            <div className="w-6 h-6 rounded bg-gradient-to-br from-blue-400 to-purple-500" />
-            <span className="text-lg font-semibold text-white">
-              ElkWalk
-            </span>
+          <Link href="/" className="flex items-center shrink-0" aria-label="ElkWalk AI home">
+            <Image
+              src="/ELK-WALK.png"
+              alt="ElkWalk"
+              width={200}
+              height={52}
+              className="h-10 w-auto sm:h-11 md:h-12 object-contain object-left"
+              priority
+            />
           </Link>
 
           {/* Desktop Navigation - Center */}

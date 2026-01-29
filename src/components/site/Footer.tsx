@@ -1,4 +1,5 @@
 import Link from "next/link";
+import Image from "next/image";
 
 export function Footer() {
   return (
@@ -7,11 +8,14 @@ export function Footer() {
         <div className="grid md:grid-cols-4 gap-8 md:gap-12 mb-12">
           {/* Brand */}
           <div>
-            <Link href="/" className="flex items-center gap-2 mb-4">
-              <div className="w-8 h-8 rounded bg-white" />
-              <span className="text-xl font-semibold text-white">
-                ElkWalk
-              </span>
+            <Link href="/" className="inline-flex items-center mb-4" aria-label="ElkWalk AI home">
+              <Image
+                src="/ELK-WALK.png"
+                alt="ElkWalk"
+                width={180}
+                height={48}
+                className="h-11 w-auto object-contain object-left"
+              />
             </Link>
             <p className="text-white/80 text-sm leading-relaxed mb-4">
               We build AI systems that reduce cost, replace manual work, and generate revenue.
