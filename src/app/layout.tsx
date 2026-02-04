@@ -61,7 +61,7 @@ export const metadata: Metadata = {
 const organizationSchema = {
   "@context": "https://schema.org",
   "@type": "Organization",
-  name: "ElkWalk",
+  name: "Elkwalk LLC",
   url: "https://elkwalk.ai",
   logo: "https://elkwalk.ai/logo.png",
   description: "We build AI systems that reduce cost, replace manual work, and generate revenue.",
@@ -69,10 +69,20 @@ const organizationSchema = {
     "https://linkedin.com/company/elkwalk",
     "https://twitter.com/elkwalk",
   ],
+  address: {
+    "@type": "PostalAddress",
+    streetAddress: "5900 Balcones Drive, STE 100",
+    addressLocality: "Austin",
+    addressRegion: "TX",
+    postalCode: "78731",
+    addressCountry: "US",
+  },
   contactPoint: {
     "@type": "ContactPoint",
-    email: "hello@elkwalk.ai",
+    email: "support@visabulletin.ai",
+    telephone: "+1-706-373-5784",
     contactType: "Customer Service",
+    areaServed: "US",
   },
 };
 

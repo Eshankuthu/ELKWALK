@@ -1,7 +1,7 @@
 import { Metadata } from "next";
 import { SectionHeading } from "@/components/site/SectionHeading";
 import { ContactForm } from "@/components/site/ContactForm";
-import { Calendar, MapPin } from "lucide-react";
+import { Calendar, MapPin, Mail, Phone } from "lucide-react";
 
 export const metadata: Metadata = {
   title: "Contact",
@@ -43,6 +43,36 @@ export default function ContactPage() {
                 <div className="space-y-6">
                   <div className="flex items-start p-6 bg-[#1A1A1A] rounded-xl border border-white/10 hover:border-white/20 transition-all">
                     <div className="flex-shrink-0 w-14 h-14 bg-[#1A1A1A] border border-white/10 rounded-xl flex items-center justify-center mr-4">
+                      <Mail className="h-7 w-7 text-white" />
+                    </div>
+                    <div>
+                      <h3 className="font-semibold text-white mb-1 text-lg">Email</h3>
+                      <a
+                        href="mailto:support@visabulletin.ai"
+                        className="text-[#2196F3] hover:text-[#42A5F5] font-medium transition-colors"
+                      >
+                        support@visabulletin.ai
+                      </a>
+                    </div>
+                  </div>
+
+                  <div className="flex items-start p-6 bg-[#1A1A1A] rounded-xl border border-white/10 hover:border-white/20 transition-all">
+                    <div className="flex-shrink-0 w-14 h-14 bg-[#1A1A1A] border border-white/10 rounded-xl flex items-center justify-center mr-4">
+                      <Phone className="h-7 w-7 text-white" />
+                    </div>
+                    <div>
+                      <h3 className="font-semibold text-white mb-1 text-lg">Phone</h3>
+                      <a
+                        href="tel:+17063735784"
+                        className="text-[#2196F3] hover:text-[#42A5F5] font-medium transition-colors"
+                      >
+                        (706) 373-5784
+                      </a>
+                    </div>
+                  </div>
+
+                  <div className="flex items-start p-6 bg-[#1A1A1A] rounded-xl border border-white/10 hover:border-white/20 transition-all">
+                    <div className="flex-shrink-0 w-14 h-14 bg-[#1A1A1A] border border-white/10 rounded-xl flex items-center justify-center mr-4">
                       <Calendar className="h-7 w-7 text-white" />
                     </div>
                     <div>
@@ -64,9 +94,11 @@ export default function ContactPage() {
                       <MapPin className="h-7 w-7 text-white" />
                     </div>
                     <div>
-                      <h3 className="font-semibold text-white mb-1 text-lg">Location</h3>
+                      <h3 className="font-semibold text-white mb-1 text-lg">Physical Address</h3>
                       <p className="text-white/80 leading-relaxed">
-                        Remote-first team serving clients worldwide
+                        Elkwalk LLC<br />
+                        5900 Balcones Drive, STE 100<br />
+                        Austin, TX 78731, US
                       </p>
                     </div>
                   </div>

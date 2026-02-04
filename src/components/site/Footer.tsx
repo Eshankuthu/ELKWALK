@@ -79,8 +79,22 @@ export function Footer() {
           {/* Connect */}
           <div>
             <h4 className="text-white font-bold mb-4 text-sm uppercase tracking-wide">Connect</h4>
-            <ul className="space-y-3 text-sm">
-              {/* Contact information will be added here */}
+            <ul className="space-y-3 text-sm text-white/80">
+              <li>
+                <a href="mailto:support@visabulletin.ai" className="hover:text-white transition-colors">
+                  support@visabulletin.ai
+                </a>
+              </li>
+              <li>
+                <a href="tel:+17063735784" className="hover:text-white transition-colors">
+                  (706) 373-5784
+                </a>
+              </li>
+              <li className="pt-1">
+                <span className="block font-medium text-white mb-1">Elkwalk LLC</span>
+                5900 Balcones Drive, STE 100<br />
+                Austin, TX 78731, US
+              </li>
             </ul>
           </div>
         </div>
